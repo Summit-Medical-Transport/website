@@ -4,13 +4,15 @@ Every made-up value on the site uses a distinctive token so you can find and
 replace it without hunting through markup. Nothing here is styled specially —
 swapping the text is all that's needed.
 
-## Find and replace
+## Already filled in
+
+- **Dispatch number** — `(970) 919-0110` / `tel:+19709190110`
+- **Service area** — `Denver, CO`
+
+## Still to find and replace
 
 | Token | Appears in | Replace with |
 |---|---|---|
-| `(000) 000-0000` | index, privacy, terms | Dispatch number, display format |
-| `+10000000000` | `tel:` links, JSON-LD | Dispatch number, E.164 format |
-| `SERVICE AREA TBD` | index, privacy, terms | e.g. `Colorado's Front Range` |
 | `BUSINESS ADDRESS TBD` | privacy, terms | Registered business address |
 | `LIABILITY CAP TBD` | terms | Per-shipment cargo liability limit |
 | `CLAIM WINDOW TBD` | terms | Days to report a claim |
@@ -18,19 +20,17 @@ swapping the text is all that's needed.
 | `COUNTY / STATE TBD` | terms | Venue for disputes |
 | `Last updated: TBD` | privacy, terms | Date you publish them |
 
-Run all the simple ones at once from the project root:
+These all live in the legal pages, so handle them together with the attorney
+review below rather than one at a time.
+
+If the dispatch number changes, note that it appears in four formats:
 
 ```sh
-PHONE_DISPLAY="(303) 555-0100"
-PHONE_E164="+13035550100"
-AREA="Colorado's Front Range"
-
-sed -i '' \
-  -e "s/(000) 000-0000/$PHONE_DISPLAY/g" \
-  -e "s/+10000000000/$PHONE_E164/g" \
-  -e "s/SERVICE AREA TBD/$AREA/g" \
-  index.html privacy.html terms.html
+grep -rn "919-0110\|9709190110" --include="*.html" .
 ```
+
+`(970) 919-0110` for display, `+19709190110` in `tel:` links, and
+`+1-970-919-0110` in the JSON-LD block at the top of `index.html`.
 
 ## Email addresses
 
