@@ -39,7 +39,7 @@
       <a href="index.html#operations">Operations</a>
       <a href="index.html#fleet">Fleet</a>
       <a href="index.html#portal">Client Portal</a>
-      <a href="index.html#careers">Careers</a>
+      <!-- <a href="index.html#careers">Careers</a> -->
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="banner__act">
@@ -73,13 +73,6 @@
     </aside>
 
     <div class="legal__body">
-      <p class="legal__note">
-        <strong>Template — not yet reviewed by counsel.</strong> This document is a
-        starting point written to match the site. Before publishing, have an
-        attorney confirm it against your actual data practices, your state's
-        requirements, and any HIPAA business associate agreements you sign with
-        hospitals or OPOs.
-      </p>
 
       <h2 id="collect">What we collect</h2>
       <p>
@@ -193,7 +186,7 @@
       <p>
         Summit Medical Transport Inc.<br>
         BUSINESS ADDRESS TBD<br>
-        <a href="mailto:privacy@summitmedicaltransport.org">privacy@summitmedicaltransport.org</a><br>
+        <a href="mailto:contact@summitmedicaltransport.org">contact@summitmedicaltransport.org</a><br>
         <a href="tel:+19709190110">(970) 919-0110</a>
       </p>
     </div>
