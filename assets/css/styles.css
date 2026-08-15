@@ -35,6 +35,8 @@
 
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:calc(var(--banner-h) + 16px); }
 
+html{ overflow-x:hidden; }
+
 body{
   margin:0;
   background:var(--paper);
@@ -550,11 +552,12 @@ a{ color:inherit; }
 
 .contact__meta{ margin-top:2rem; display:flex; flex-direction:column; gap:.9rem; }
 .contact__meta > div{ display:grid; grid-template-columns:5.5rem 1fr; gap:.8rem; align-items:baseline; }
+.contact__meta dd{ min-width:0; }
 .contact__meta dt{
   font-family:var(--mono); font-size:.66rem; letter-spacing:.15em;
   text-transform:uppercase; color:var(--frost);
 }
-.contact__meta dd a{ font-size:.92rem; color:var(--summit); text-decoration:none; border-bottom:1px solid transparent; color:var(--frost) }
+.contact__meta dd a{ font-size:.92rem; color:var(--summit); text-decoration:none; border-bottom:1px solid transparent; color:var(--frost); overflow-wrap:anywhere; }
 .contact__meta dd a:hover{ border-bottom-color:var(--frost); }
 
 .cform{
@@ -696,14 +699,14 @@ a{ color:inherit; }
   .burger{ display:flex; }
   .banner__act{ display:none; }
   .nav{
-    position:fixed; inset:calc(var(--banner-h) + 38px) 0 auto 0;
+    position:fixed; inset:calc(var(--banner-h) + 1px) 0 auto 0;
     flex-direction:column; align-items:stretch; gap:0;
     background:var(--paper); border-bottom:1px solid var(--line);
     padding:.5rem var(--gut) 1.5rem;
     margin-left:0;
     transform:translateY(-12px); opacity:0; pointer-events:none;
     transition:opacity .2s ease, transform .2s ease;
-    max-height:calc(100vh - var(--banner-h) - 38px); overflow-y:auto;
+    max-height:calc(100vh - var(--banner-h) - 1px); overflow-y:auto;
   }
   .nav.is-open{ transform:none; opacity:1; pointer-events:auto; }
   .nav a{ padding:.95rem 0; border-bottom:1px solid var(--line); font-size:.82rem; }
@@ -724,7 +727,10 @@ a{ color:inherit; }
   .dispatchbar__area{ margin-left:0; order:3; flex-basis:100%; }
 
   .hero__h1{ font-size:clamp(2.2rem,10vw,3.2rem); }
-  .hero__cta .btn{ width:100%; }
+  .hero__cta .btn{ width:100%; white-space:normal; text-align:center; }
+
+  .contact__meta > div{ grid-template-columns:4.5rem 1fr; gap:.6rem; }
+  .contact__meta dd a{ font-size:.78rem; }
 
   .steps{ grid-template-columns:1fr; }
   .cform__grid{ grid-template-columns:1fr; }
@@ -740,6 +746,8 @@ a{ color:inherit; }
   .brand__mark{ height:46px; width:auto; }
   .brand__name{ font-size:1.12rem; }
   .board__row{ grid-template-columns:4.6rem 1fr 4rem; gap:.6rem; }
+
+  .contact__meta dd a{ font-size:.68rem; }
 }
 
 /* ═══ MOTION / PRINT ═══════════════════════════════════════════════ */
