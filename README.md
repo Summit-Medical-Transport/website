@@ -49,17 +49,3 @@ ischemia time, labeled as such — they are not live operational data.
 ## Deploying
 
 Hosted on GitHub Pages from the `main` branch. Pushing to `main` publishes.
-
-For the custom domain, add a `CNAME` file containing
-`summitmedicaltransport.org`, then point DNS at GitHub:
-
-```
-A     @      185.199.108.153
-A     @      185.199.109.153
-A     @      185.199.110.153
-A     @      185.199.111.153
-CNAME www    summit-medical-transport.github.io
-```
-
-Enable "Enforce HTTPS" in the repository's Pages settings once the certificate
-provisions.
