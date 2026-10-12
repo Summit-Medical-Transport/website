@@ -6,8 +6,8 @@ and JavaScript with no build step and no dependencies.
 ```
 index.html          One-page site: hero, services, operations, fleet,
                     client portal, about, careers, contact
-privacy.html        Privacy policy (draft)
-terms.html          Terms of service (draft)
+privacy.html        Privacy policy
+terms.html          Website terms of use
 assets/css/         Single stylesheet
 assets/js/          Nav, clock, scroll reveals, form feedback
 assets/img/         Logo, favicons, fleet photography
@@ -39,8 +39,8 @@ loaded from Google Fonts.
 
 ## What is real and what isn't
 
-The phone number, service area, business address, job postings and both legal
-pages are placeholders. `PLACEHOLDERS.md` lists all of them. The contact form
+The business address and job postings are placeholders, and both legal pages
+still need attorney review. `PLACEHOLDERS.md` lists all of them. The contact form
 and portal signup are not connected to a backend and say so when submitted.
 
 The viability window figures in the hero are published reference ranges for cold
