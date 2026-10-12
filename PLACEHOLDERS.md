@@ -13,15 +13,15 @@ swapping the text is all that's needed.
 
 | Token | Appears in | Replace with |
 |---|---|---|
-| `BUSINESS ADDRESS TBD` | privacy, terms | Registered business address |
-| `LIABILITY CAP TBD` | terms | Per-shipment cargo liability limit |
-| `CLAIM WINDOW TBD` | terms | Days to report a claim |
-| `STATE TBD` | terms | Governing state |
-| `COUNTY / STATE TBD` | terms | Venue for disputes |
-| `Last updated: TBD` | privacy, terms | Date you publish them |
+| `BUSINESS ADDRESS TBD` | privacy (contact), terms (preamble and contact) | Registered business address. The terms used to show 131 Continental Drive, Suite 305, Newark, DE 19713 (a Delaware registered-agent address), which conflicts with the Colorado governing-law and Denver venue clauses. Use the real Colorado business address, or confirm with counsel which address belongs here |
+| `STATE OF INCORPORATION TBD` | terms (preamble) | The state Summit Medical Transport, Inc. is incorporated in. The old text said Delaware; confirm it before it goes back in |
 
-These all live in the legal pages, so handle them together with the attorney
-review below rather than one at a time.
+Already resolved in the legal pages: "Last updated" / "Last modified" dates are set to
+2026-10-12. The terms no longer contain `LIABILITY CAP TBD`, `CLAIM WINDOW TBD`,
+`STATE TBD` or `COUNTY / STATE TBD`. Governing law is Colorado and the venue is the
+City and County of Denver. Counsel should confirm both.
+
+Change the dates whenever the text of a legal page changes.
 
 If the dispatch number changes, note that it appears in four formats:
 
@@ -41,6 +41,11 @@ These are assumed, not confirmed. Create them or change them:
 - `careers@summitmedicaltransport.org` — every Apply button
 - `billing@summitmedicaltransport.org` — contact section
 - `privacy@summitmedicaltransport.org` — privacy policy
+- `support@summitmedicaltransport.org` — terms (SMS help, disputes, arbitration opt-out)
+- `contact@summitmedicaltransport.org` — terms contact block
+
+Consider using fewer addresses (for example, `info@` instead of both `contact@` and
+`support@`).
 
 ## Things that need wiring, not just editing
 
@@ -63,11 +68,25 @@ application.
 
 ## Legal pages
 
-`privacy.html` and `terms.html` are drafts written to match the site, and both
-carry a visible "not yet reviewed by counsel" banner. Delete that banner
-(`<p class="legal__note">…</p>`) once an attorney has signed off. The liability
-limits in the terms are placeholders — those numbers carry real exposure and
-should not go live as-is.
+`privacy.html` describes what the website and the Summit web and mobile apps
+actually do as of its "Last updated" date. That covers the data collected, the
+vendors (AWS, Vercel, Expo, Google Maps Platform, Google Fonts, GitHub, the app
+stores), and the retention and security in place today. Keep it in step with the
+product. In particular, update it when:
+
+- automated text or email trip alerts ship. They are described as not yet sent, and
+  the SMS section of the terms only applies once they do;
+- a retention schedule is adopted;
+- business associate agreements, encryption at rest, MFA or idle sign-out are in
+  place. The policy deliberately does not claim these yet;
+- persisted GPS tracks ship (CRM-111). The policy says live location is not stored;
+- analytics, a contact form, or any other third-party script is added to the site.
+
+`privacy.html` carries a "not yet reviewed by counsel" note (`<p class="legal__note">`
+at the top of the body). Delete it once an attorney has signed off. `terms.html` has
+no such banner but also needs that review. Its SMS section describes a service that
+doesn't exist yet. The old `privacy.txt` draft was removed: GitHub Pages served it as
+plain text and it promised safeguards that weren't in place.
 
 ## Media
 
