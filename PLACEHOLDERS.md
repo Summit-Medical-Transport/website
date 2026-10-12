@@ -14,7 +14,6 @@ swapping the text is all that's needed.
 | Token | Appears in | Replace with |
 |---|---|---|
 | `BUSINESS ADDRESS TBD` | privacy (contact), terms (preamble and contact) | Registered business address. The terms used to show 131 Continental Drive, Suite 305, Newark, DE 19713 (a Delaware registered-agent address), which conflicts with the Colorado governing-law and Denver venue clauses. Use the real Colorado business address, or confirm with counsel which address belongs here |
-| `STATE OF INCORPORATION TBD` | terms (preamble) | The state Summit Medical Transport, Inc. is incorporated in. The old text said Delaware; confirm it before it goes back in |
 
 Already resolved in the legal pages: "Last updated" / "Last modified" dates are set to
 2026-10-12. The terms no longer contain `LIABILITY CAP TBD`, `CLAIM WINDOW TBD`,
