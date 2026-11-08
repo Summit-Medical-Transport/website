@@ -8,15 +8,15 @@ swapping the text is all that's needed.
 
 - **Dispatch number** — `(970) 919-0110` / `tel:+19709190110`
 - **Service area** — `Denver, CO`
+- **Business address** — `8330 E Quincy Ave, Apt D206, Denver, CO 80237-2454, United States`
+  (privacy contact block; terms preamble and contact block)
 
 ## Still to find and replace
 
-| Token | Appears in | Replace with |
-|---|---|---|
-| `BUSINESS ADDRESS TBD` | privacy (contact), terms (preamble and contact) | Registered business address. The terms used to show 131 Continental Drive, Suite 305, Newark, DE 19713 (a Delaware registered-agent address), which conflicts with the Colorado governing-law and Denver venue clauses. Use the real Colorado business address, or confirm with counsel which address belongs here |
+No tokens remain in the legal pages.
 
 Already resolved in the legal pages: "Last updated" / "Last modified" dates are set to
-2026-10-12. The terms no longer contain `LIABILITY CAP TBD`, `CLAIM WINDOW TBD`,
+2026-11-07. The terms no longer contain `LIABILITY CAP TBD`, `CLAIM WINDOW TBD`,
 `STATE TBD` or `COUNTY / STATE TBD`. Governing law is Colorado and the venue is the
 City and County of Denver. Counsel should confirm both.
 
@@ -76,9 +76,17 @@ product. In particular, update it when:
 - automated text or email trip alerts ship. They are described as not yet sent, and
   the SMS section of the terms only applies once they do;
 - a retention schedule is adopted;
-- business associate agreements, encryption at rest, MFA or idle sign-out are in
-  place. The policy deliberately does not claim these yet;
-- persisted GPS tracks ship (CRM-111). The policy says live location is not stored;
+- business associate agreements, server-side encryption at rest or MFA are in
+  place. The policy deliberately does not claim these yet. Idle sign-out (15
+  minutes, web and mobile) and the 12-hour session cap are described;
+- what the trip route (GPS breadcrumb, CRM-111) records, or who can see it,
+  changes. The policy describes the current throttle (about 15 s / 50 m, only
+  while a trip is in progress) and who sees full points versus a summary;
+- account deletion changes. `privacy.html#delete-account` is the web deletion
+  link for Google Play's data-deletion form and describes the current soft
+  delete (`DELETE /auth/delete-account`): the account is deactivated and its
+  details are kept. Email requests to `privacy@` have to be handled by hand;
+  there is no tool to erase or de-identify an account yet;
 - analytics, a contact form, or any other third-party script is added to the site.
 
 `privacy.html` carries a "not yet reviewed by counsel" note (`<p class="legal__note">`

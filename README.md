@@ -39,8 +39,8 @@ loaded from Google Fonts.
 
 ## What is real and what isn't
 
-The business address and job postings are placeholders, and both legal pages
-still need attorney review. `PLACEHOLDERS.md` lists all of them. The contact form
+The job postings are placeholders, and both legal pages still need attorney
+review. `PLACEHOLDERS.md` lists all of them. The contact form
 and portal signup are not connected to a backend and say so when submitted.
 
 The viability window figures in the hero are published reference ranges for cold
