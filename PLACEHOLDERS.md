@@ -8,20 +8,19 @@ swapping the text is all that's needed.
 
 - **Dispatch number** — `(970) 919-0110` / `tel:+19709190110`
 - **Service area** — `Denver, CO`
+- **Business address** — `8330 E Quincy Ave, Apt D206, Denver, CO 80237-2454, United States`
+  (privacy contact block; terms preamble and contact block)
 
 ## Still to find and replace
 
-| Token | Appears in | Replace with |
-|---|---|---|
-| `BUSINESS ADDRESS TBD` | privacy, terms | Registered business address |
-| `LIABILITY CAP TBD` | terms | Per-shipment cargo liability limit |
-| `CLAIM WINDOW TBD` | terms | Days to report a claim |
-| `STATE TBD` | terms | Governing state |
-| `COUNTY / STATE TBD` | terms | Venue for disputes |
-| `Last updated: TBD` | privacy, terms | Date you publish them |
+No tokens remain in the legal pages.
 
-These all live in the legal pages, so handle them together with the attorney
-review below rather than one at a time.
+Already resolved in the legal pages: "Last updated" / "Last modified" dates are set to
+2026-11-07. The terms no longer contain `LIABILITY CAP TBD`, `CLAIM WINDOW TBD`,
+`STATE TBD` or `COUNTY / STATE TBD`. Governing law is Colorado and the venue is the
+City and County of Denver. Counsel should confirm both.
+
+Change the dates whenever the text of a legal page changes.
 
 If the dispatch number changes, note that it appears in four formats:
 
@@ -41,6 +40,11 @@ These are assumed, not confirmed. Create them or change them:
 - `careers@summitmedicaltransport.org` — every Apply button
 - `billing@summitmedicaltransport.org` — contact section
 - `privacy@summitmedicaltransport.org` — privacy policy
+- `support@summitmedicaltransport.org` — terms (SMS help, disputes, arbitration opt-out)
+- `contact@summitmedicaltransport.org` — terms contact block
+
+Consider using fewer addresses (for example, `info@` instead of both `contact@` and
+`support@`).
 
 ## Things that need wiring, not just editing
 
@@ -63,11 +67,33 @@ application.
 
 ## Legal pages
 
-`privacy.html` and `terms.html` are drafts written to match the site, and both
-carry a visible "not yet reviewed by counsel" banner. Delete that banner
-(`<p class="legal__note">…</p>`) once an attorney has signed off. The liability
-limits in the terms are placeholders — those numbers carry real exposure and
-should not go live as-is.
+`privacy.html` describes what the website and the Summit web and mobile apps
+actually do as of its "Last updated" date. That covers the data collected, the
+vendors (AWS, Vercel, Expo, Google Maps Platform, Google Fonts, GitHub, the app
+stores), and the retention and security in place today. Keep it in step with the
+product. In particular, update it when:
+
+- automated text or email trip alerts ship. They are described as not yet sent, and
+  the SMS section of the terms only applies once they do;
+- a retention schedule is adopted;
+- business associate agreements, server-side encryption at rest or MFA are in
+  place. The policy deliberately does not claim these yet. Idle sign-out (15
+  minutes, web and mobile) and the 12-hour session cap are described;
+- what the trip route (GPS breadcrumb, CRM-111) records, or who can see it,
+  changes. The policy describes the current throttle (about 15 s / 50 m, only
+  while a trip is in progress) and who sees full points versus a summary;
+- account deletion changes. `privacy.html#delete-account` is the web deletion
+  link for Google Play's data-deletion form and describes the current soft
+  delete (`DELETE /auth/delete-account`): the account is deactivated and its
+  details are kept. Email requests to `privacy@` have to be handled by hand;
+  there is no tool to erase or de-identify an account yet;
+- analytics, a contact form, or any other third-party script is added to the site.
+
+`privacy.html` carries a "not yet reviewed by counsel" note (`<p class="legal__note">`
+at the top of the body). Delete it once an attorney has signed off. `terms.html` has
+no such banner but also needs that review. Its SMS section describes a service that
+doesn't exist yet. The old `privacy.txt` draft was removed: GitHub Pages served it as
+plain text and it promised safeguards that weren't in place.
 
 ## Media
 
